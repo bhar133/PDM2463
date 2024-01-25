@@ -11,7 +11,7 @@ function draw() {
   rect(10, 10, 250, 120);
   fill(255,255,255);
   stroke(0);
-  strokeWeight(1.5);
+  strokeWeight(1);
   circle(70, 70, 100);
   square(140, 20, 100);
 
