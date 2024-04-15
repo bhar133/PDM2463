@@ -81,9 +81,9 @@ class Character {
     this.sprite.changeAni('crawl');
 
     this.speed = speed; 
-    this.sprite.vel = p5.Vector.random2D(); 
-    this.sprite.vel.setMag(this.speed);
-
+    let randomVel = p5.Vector.random2D();
+    randomVel.mult(this.speed);
+    this.sprite.vel = randomVel;
   }
 
   crawl(){
@@ -114,12 +114,8 @@ class Character {
 
   updateSpeed(newSpeed) {
     this.speed = newSpeed;
-    this.sprite.vel.setMag(this.speed);
-  }
-
-  updateSpeed(newSpeed) {
-    this.speed = newSpeed;
-    this.sprite.vel.setMag(this.speed);
+    let currentDirection = createVector(this.sprite.vel.x, this.sprite.vel.y).normalize(); // Preserve current direction
+    this.sprite.vel = currentDirection.mult(this.speed); // Set new speed while maintaining direction
   }
 
 }
