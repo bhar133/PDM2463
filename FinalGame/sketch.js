@@ -54,9 +54,9 @@ class Player {
 
     this.useStandColliders();
     this.sprite.friction = 0;
-    this.sprite.rotationLock = false;
+    this.sprite.rotationLock = true;
     this.sprite.bounciness = 0;
-    this.currentState = this.previousState = Scuba.States.Float;
+    this.currentState = this.previousState = Player.States.Stand;
 
     this.speed = 3;
 
